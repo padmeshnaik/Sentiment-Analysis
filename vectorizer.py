@@ -3,11 +3,11 @@ import re
 import os
 import pickle
 
-cur_dir = os.path.dirname(__file__)
+cur_dir = os.path.dirname(__file__)     #Stores the current directory path in 'cur_dir'
 stop = pickle.load(open(
                 os.path.join(cur_dir,
                 'pkl_objects',
-                'stopwords.pkl'), 'rb'))
+                'stopwords.pkl'), 'rb'))   # stores the 'stopwords.pkl' file from 'pkl_objects' folder
 
 def tokenizer(text):
     text = re.sub('<[^>]*>', '', text)
