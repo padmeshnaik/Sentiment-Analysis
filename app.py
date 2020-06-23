@@ -13,7 +13,7 @@ SQLite database every time we restart the web application. In order to do so, we
 need to add a line of code to import the update_model function from the update.py
 script at the top of app.py: """
 
-# import update function from local dir
+# import update function which we created from local dir
 from update import update_model
 
 
@@ -80,7 +80,7 @@ def feedback():
     inv_label = {'negative': 0, 'positive': 1}
     y = inv_label[prediction]
     if feedback == 'Incorrect':
-        y = int(not(y))
+        y = int(not(y))                            # since our prediction is wrong , we change the value of y
     train(review, y)
     sqlite_entry(db, review, y)
     return render_template('thanks.html')

@@ -39,7 +39,7 @@ cur_dir = os.path.dirname(__file__)
 clf = pickle.load(open(os.path.join(cur_dir,
                   'pkl_objects',
                   'classifier.pkl'), 'rb'))
-db = os.path.join(cur_dir, 'reviews.sqlite')
+db = os.path.join(cur_dir, 'reviews.sqlite')      # Output: C:/....../../../reviews.sqlite
 
 clf = update_model(db_path=db, model=clf, batch_size=10000)
 
